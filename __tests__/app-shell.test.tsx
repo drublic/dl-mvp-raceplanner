@@ -46,7 +46,7 @@ const globalsCss = readFileSync(
 );
 
 describe("app shell", () => {
-  it("renders sticky shared header with brand, nav stubs, and account placeholder", () => {
+  it("renders sticky shared header with brand, calendar nav, startgeld stub, and account placeholder", () => {
     render(
       <div className="app-shell">
         <AppHeader />
@@ -66,9 +66,18 @@ describe("app shell", () => {
       "src",
       "/images/dsd-logo.png",
     );
-    expect(within(header).getByRole("link", { name: "Home" })).toBeVisible();
-    expect(within(header).getByRole("link", { name: "Kalender" })).toBeVisible();
-    expect(within(header).getByRole("link", { name: "Startgeld" })).toBeVisible();
+
+    const home = within(header).getByRole("link", { name: "Home" });
+    const kalender = within(header).getByRole("link", { name: "Kalender" });
+    const startgeld = within(header).getByRole("link", { name: "Startgeld" });
+
+    expect(home).toBeVisible();
+    expect(kalender).toBeVisible();
+    expect(kalender).toHaveAttribute("href", "/calendar");
+    expect(kalender.getAttribute("data-stub")).toBeNull();
+    expect(startgeld).toBeVisible();
+    expect(startgeld).toHaveAttribute("href", "/start-fee");
+    expect(startgeld).toHaveAttribute("data-stub", "true");
     expect(within(header).getByTestId("account-placeholder")).toHaveTextContent(
       "Account",
     );
