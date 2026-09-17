@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", stub: false },
-  { href: "/kalender", label: "Kalender", stub: true },
-  { href: "/startgeld", label: "Startgeld", stub: true },
+  { href: "/calendar", label: "Kalender", stub: false },
+  { href: "/start-fee", label: "Startgeld", stub: true },
 ] as const;
 
 export function AppHeader() {

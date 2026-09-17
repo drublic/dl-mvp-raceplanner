@@ -1,0 +1,278 @@
+{
+  "Amateure": [
+    {
+      "name": "12. Herforder Frühjahrspreis",
+      "weekday": "Sonntag",
+      "date": "15.03.",
+      "startTime": null,
+      "meldeSchluss": "08.03.",
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Tim R."
+      ]
+    },
+    {
+      "name": "Werne Frühjahrs Cup",
+      "weekday": "Samstag",
+      "date": "21.03.",
+      "startTime": null,
+      "meldeSchluss": "16.03.",
+      "cancelled": false,
+      "riders": [
+        "Paul W."
+      ]
+    },
+    {
+      "name": "Olfener Frühjahrs Cup",
+      "weekday": "Sonntag",
+      "date": "22.03.",
+      "startTime": null,
+      "meldeSchluss": "16.03.",
+      "cancelled": false,
+      "riders": [
+        "Erik S."
+      ]
+    },
+    {
+      "name": "Rund um Merken",
+      "weekday": "Sonntag",
+      "date": "29.03.",
+      "startTime": "13:40",
+      "meldeSchluss": "25.03.",
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Tim R.",
+        "Paul W.",
+        "Alex M.",
+        "Erik S.",
+        "Max H."
+      ]
+    },
+    {
+      "name": "Großer Osterpreis von Ahrweiler",
+      "weekday": "Montag",
+      "date": "06.04.",
+      "startTime": null,
+      "meldeSchluss": "03.04.",
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Paul W.",
+        "Max H."
+      ]
+    },
+    {
+      "name": "Rund in Fischeln",
+      "weekday": "Sonntag",
+      "date": "26.04.",
+      "startTime": null,
+      "meldeSchluss": "24.04.",
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Tim R.",
+        "Alex M.",
+        "Erik S.",
+        "Paul W."
+      ]
+    },
+    {
+      "name": "75. Rund in Refrath",
+      "weekday": "Donnerstag",
+      "date": "14.05.",
+      "startTime": "13:20",
+      "meldeSchluss": "10.05.",
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Tim R.",
+        "Alex M.",
+        "Max H."
+      ]
+    },
+    {
+      "name": "Rund in Rheinbach — cancelled",
+      "weekday": "Sonntag",
+      "date": "28.06.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": true,
+      "riders": []
+    },
+    {
+      "name": "Rund um die Kö (Düsseldorf)",
+      "weekday": "Sonntag",
+      "date": "09.08.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Paul W.",
+        "Erik S.",
+        "Max H."
+      ]
+    },
+    {
+      "name": "Poller Wiesen Crit Köln",
+      "weekday": "Sonntag",
+      "date": "20.09.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": false,
+      "riders": [
+        "Jonas B.",
+        "Tim R.",
+        "Alex M.",
+        "Paul W.",
+        "Erik S."
+      ]
+    }
+  ],
+  "Elite-Amateure": [
+    {
+      "name": "12. Herforder Frühjahrspreis",
+      "weekday": "Sonntag",
+      "date": "15.03.",
+      "startTime": null,
+      "meldeSchluss": "08.03.",
+      "cancelled": false,
+      "riders": []
+    },
+    {
+      "name": "Rund um Merken",
+      "weekday": "Sonntag",
+      "date": "29.03.",
+      "startTime": null,
+      "meldeSchluss": "25.03.",
+      "cancelled": false,
+      "riders": [
+        "Alex M."
+      ]
+    },
+    {
+      "name": "75. Rund in Refrath",
+      "weekday": "Donnerstag",
+      "date": "14.05.",
+      "startTime": null,
+      "meldeSchluss": "10.05.",
+      "cancelled": false,
+      "riders": [
+        "Alex M.",
+        "Ben F."
+      ]
+    },
+    {
+      "name": "Rund um die Kö (Düsseldorf)",
+      "weekday": "Sonntag",
+      "date": "09.08.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": false,
+      "riders": []
+    }
+  ],
+  "Frauen": [
+    {
+      "name": "12. Herforder Frühjahrspreis (Frauen)",
+      "weekday": "Sonntag",
+      "date": "15.03.",
+      "startTime": null,
+      "meldeSchluss": "08.03.",
+      "cancelled": false,
+      "riders": [
+        "Lea K.",
+        "Mira S."
+      ]
+    },
+    {
+      "name": "Werne Frühjahrs Cup (Frauen)",
+      "weekday": "Samstag",
+      "date": "21.03.",
+      "startTime": null,
+      "meldeSchluss": "16.03.",
+      "cancelled": false,
+      "riders": [
+        "Nora H."
+      ]
+    },
+    {
+      "name": "Rund um Merken (Frauen)",
+      "weekday": "Sonntag",
+      "date": "29.03.",
+      "startTime": "13:20",
+      "meldeSchluss": "25.03.",
+      "cancelled": false,
+      "riders": [
+        "Lea K.",
+        "Mira S.",
+        "Nora H.",
+        "Sara W."
+      ]
+    },
+    {
+      "name": "Großer Osterpreis von Ahrweiler (Frauen)",
+      "weekday": "Montag",
+      "date": "06.04.",
+      "startTime": null,
+      "meldeSchluss": "03.04.",
+      "cancelled": false,
+      "riders": [
+        "Lea K.",
+        "Nora H.",
+        "Anna P."
+      ]
+    },
+    {
+      "name": "75. Rund in Refrath (Frauen)",
+      "weekday": "Donnerstag",
+      "date": "14.05.",
+      "startTime": "12:40",
+      "meldeSchluss": "10.05.",
+      "cancelled": false,
+      "riders": [
+        "Lea K.",
+        "Mira S.",
+        "Sara W."
+      ]
+    },
+    {
+      "name": "Rund in Rheinbach (Frauen) — cancelled",
+      "weekday": "Sonntag",
+      "date": "28.06.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": true,
+      "riders": []
+    },
+    {
+      "name": "Rund um die Kö Düsseldorf (Frauen)",
+      "weekday": "Sonntag",
+      "date": "09.08.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": false,
+      "riders": [
+        "Lea K.",
+        "Nora H.",
+        "Mira S.",
+        "Anna P."
+      ]
+    },
+    {
+      "name": "Poller Wiesen Crit Köln (Frauen)",
+      "weekday": "Sonntag",
+      "date": "20.09.",
+      "startTime": null,
+      "meldeSchluss": null,
+      "cancelled": false,
+      "riders": [
+        "Mira S.",
+        "Sara W.",
+        "Anna P."
+      ]
+    }
+  ]
+}
