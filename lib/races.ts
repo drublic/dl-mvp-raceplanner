@@ -109,15 +109,26 @@ export function addRider(
   }
 
   const db = getDb();
-  const result = db
-    .prepare(
-      `INSERT OR IGNORE INTO start_list_entries (race_id, rider_name, sort_order)
-       SELECT ?, ?, COALESCE(MAX(sort_order), -1) + 1
-       FROM start_list_entries
-       WHERE race_id = ?`,
-    )
-    .run(raceId, trimmed, raceId);
-  if (result.changes === 0) {
+  const insertRider = db.transaction((currentRaceId: number, currentRiderName: string) => {
+    const insertResult = db
+      .prepare(
+        `INSERT OR IGNORE INTO start_list_entries (race_id, rider_name, sort_order)
+         VALUES (?, ?, 0)`,
+      )
+      .run(currentRaceId, currentRiderName);
+
+    if (insertResult.changes === 0) {
+      return false;
+    }
+
+    db.prepare(`UPDATE start_list_entries SET sort_order = id WHERE id = ?`).run(
+      Number(insertResult.lastInsertRowid),
+    );
+    return true;
+  });
+
+  const inserted = insertRider(raceId, trimmed);
+  if (!inserted) {
     return { ok: false, error: "duplicate" };
   }
 
