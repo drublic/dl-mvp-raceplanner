@@ -67,6 +67,20 @@ describe("start list", () => {
     expect(result.race.participantCount).toBe(7);
   });
 
+  it("rejects duplicate rider adds and keeps one entry", () => {
+    const merken = listRacesByCategory("amateure").find(
+      (race) => race.name === "Rund um Merken",
+    );
+
+    const first = addRider("amateure", merken!.id, "Leo K.");
+    const second = addRider("amateure", merken!.id, "Leo K.");
+
+    expect(first.ok).toBe(true);
+    expect(second).toEqual({ ok: false, error: "duplicate" });
+    expect(getRace("amateure", merken!.id)?.riders.filter((name) => name === "Leo K."))
+      .toHaveLength(1);
+  });
+
   it("rejects adds on a cancelled race", () => {
     const rheinbach = listRacesByCategory("amateure").find((race) =>
       race.name.includes("Rund in Rheinbach"),
@@ -75,6 +89,19 @@ describe("start list", () => {
 
     const before = getRace("amateure", rheinbach!.id);
     const result = addRider("amateure", rheinbach!.id, "Jonas B.");
+
+    expect(result).toEqual({ ok: false, error: "cancelled" });
+    expect(getRace("amateure", rheinbach!.id)?.riders).toEqual(before?.riders);
+  });
+
+  it("rejects removals on a cancelled race", () => {
+    const rheinbach = listRacesByCategory("amateure").find((race) =>
+      race.name.includes("Rund in Rheinbach"),
+    );
+    expect(rheinbach?.cancelled).toBe(true);
+
+    const before = getRace("amateure", rheinbach!.id);
+    const result = removeRider("amateure", rheinbach!.id, "Jonas B.");
 
     expect(result).toEqual({ ok: false, error: "cancelled" });
     expect(getRace("amateure", rheinbach!.id)?.riders).toEqual(before?.riders);

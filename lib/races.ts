@@ -107,23 +107,19 @@ export function addRider(
   if (race.cancelled) {
     return { ok: false, error: "cancelled" };
   }
-  if (race.riders.includes(trimmed)) {
-    return { ok: false, error: "duplicate" };
-  }
 
   const db = getDb();
-  const nextOrder =
-    (
-      db
-        .prepare(
-          `SELECT COALESCE(MAX(sort_order), -1) + 1 AS next_order FROM start_list_entries WHERE race_id = ?`,
-        )
-        .get(raceId) as { next_order: number }
-    ).next_order ?? 0;
-
-  db.prepare(
-    `INSERT INTO start_list_entries (race_id, rider_name, sort_order) VALUES (?, ?, ?)`,
-  ).run(raceId, trimmed, nextOrder);
+  const result = db
+    .prepare(
+      `INSERT OR IGNORE INTO start_list_entries (race_id, rider_name, sort_order)
+       SELECT ?, ?, COALESCE(MAX(sort_order), -1) + 1
+       FROM start_list_entries
+       WHERE race_id = ?`,
+    )
+    .run(raceId, trimmed, raceId);
+  if (result.changes === 0) {
+    return { ok: false, error: "duplicate" };
+  }
 
   const updated = getRace(categoryId, raceId);
   if (!updated) {
